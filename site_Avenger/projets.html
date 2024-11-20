@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Projets</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Custom styles for this template -->
+  <link href=" css/style.css" rel="stylesheet" />
+  <link href=" css/style2.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+ <!-- header section strats -->
+ <header class="header_section">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container d-block">
+      <div class="main_nav_menu">
+        <div class="fk_width">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div id="myNav" class="overlay">
+            <div class="overlay-content">
+              <a class="" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+              <a class="" href="projets.html">Projet </a>
+              
+              <a class="" href="CV- anthony.pdf">CV </a>
+            </div>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <span>
+            Anthony Starko
+          </span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+  </div>
+
+  <!-- Content Sections -->
+  <main>
+    <!-- Section 1 -->
+    <section>
+      <h2>Travaux Récents</h2>
+      <div class="row">
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="pages/pentest.html" class="image fit thumb">
+                <img src="images/pentest.png" alt="" />
+                <button class="image-button">Pentest</button> <!-- Le bouton ajouté -->
+            </a>
+            
+        </article>
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="pages/devweb.html" class="image fit thumb">
+                <img src="images/dev.webp" alt="" />
+                <button class="image-button">Dev</button> <!-- Le bouton ajouté -->
+            </a>
+            
+        </article>
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="pages/ia.html" class="image fit thumb">
+                <img src="images/IA.jpg" alt="" />
+                <button class="image-button">IA</button> <!-- Le bouton ajouté -->
+            </a>
+            
+        </article>
+
+
+        <article class="col-6 col-12-xsmall work-item">
+          <a href="pages/osint.html" class="image fit thumb">
+              <img src="images/OSINT.jpg" alt="" />
+              <button class="image-button">OSINT</button> <!-- Le bouton ajouté -->
+          </a>
+          
+      </article>
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="pages/forensic.html" class="image fit thumb">
+                <img src="images/forensic.jpg" alt="" />
+                <button class="image-button">Forensic</button> <!-- Le bouton ajouté -->
+            </a>
+            
+        </article>
+
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="pages/concert.html" class="image fit thumb" onclick="openModal()">
+                <img src="images/concert.png" alt="" />
+                <button class="image-button">Concert</button> <!-- Le bouton ajouté -->
+            </a>
+          
+        </article>
+        
+        <!-- Modale pour la vidéo -->
+        <div id="videoModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <video id="videoPlayer" controls>
+                <source src="images/ironmanconcert.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </section>
+
+    
+  </main>
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,233 @@
+/* Conteneur principal pour la section "Travaux Récents" */
+h2 {
+    text-align: center;
+    font-size: 5vw;
+    margin-bottom: 2em;
+    color: #ffffff;
+}
+.container {
+    display: flex;  /* Utilisation de Flexbox */
+    flex-direction: column; /* Les éléments sont alignés verticalement */
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    height: 100vh;  /* Utilisation de toute la hauteur de la fenêtre */
+    text-align: center;
+    padding: 2em;
+    
+}
+/* Grille pour les articles */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Les articles s'adaptent automatiquement */
+    justify-content: center; /* Centrer les articles horizontalement */
+    gap: 1.5em; /* Espacement entre les articles */
+}
+/* Articles individuels */
+.work-item {
+    position: relative; /* Important pour que le bouton soit positionné par rapport à l'image */
+    overflow: hidden;   /* Assurez-vous que le contenu qui déborde (comme l'image) est masqué */
+    display: flex;      /* Utiliser flexbox pour gérer la taille de l'image */
+    flex-direction: column;
+    justify-content: flex-start;
+   
+}
+
+/* Styles pour l'image dans chaque article */
+.work-item .image img {
+    width: 100%;        /* L'image prend toute la largeur de l'élément parent */
+    height: 100%;       /* L'image prend toute la hauteur de l'élément parent */
+    object-fit: cover;  /* L'image couvre complètement l'élément sans déformation */
+    border-radius: 40px; /* Bordure arrondie */
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* S'assure que l'image couvre bien l'espace */
+    
+}
+
+/* Titre et description sous chaque image */
+.work-item h3 {
+    font-size: 1.5em;
+    margin: 1em 0;
+    text-align: center;
+    color: #333;
+}
+
+.work-item p {
+    font-size: 1em;
+    color: #777;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Effet au survol pour chaque article */
+.work-item:hover {
+    transform: translateY(-5px); /* Légère élévation */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Modale vidéo */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    z-index: 1; /* Au-dessus du contenu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out; /* Animation d'apparition */
+}
+
+.modal video {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation de la modale */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Pour les petits écrans, ajuster la taille des articles */
+@media (max-width: 768px) {
+    .work-item {
+        width: 100%; /* Les articles prennent toute la largeur sur les petits écrans */
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+/* Coder les styles pour les articles */
+.work-item {
+    position: relative; /* Important pour que le bouton soit positionné par rapport à l'image */
+}
+
+.image-button {
+    position: absolute;
+    top: 50%;            /* Centrer verticalement */
+    left: 50%;           /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Centrer le bouton exactement */
+    padding: 1em 2em;    /* Agrandir la taille du bouton */
+    background-color: transparent; /* Fond transparent */
+    color: white;        /* Texte blanc */
+ 
+    border-radius: 10px; /* Bordure arrondie */
+    font-size: 1.2em;    /* Agrandir la taille du texte */
+    cursor: pointer;    /* Afficher le curseur pointer */
+    opacity: 1;        /* Légère opacité pour que le bouton soit toujours visible mais discret */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition pour le bouton */
+}
+.work-item:hover .image-button {
+    opacity: 1; /* Rendre visible le bouton quand l'image est survolée */
+}
+
+/* Assurer que les images sont bien dimensionnées */
+.image.fit {
+    position: relative; /* Assurer que l'image occupe l'espace de l'élément parent */
+    width: 100%;
+    height: auto;
+}
+.image-button {
+    position: absolute;  /* Positionner le bouton par rapport à l'image */
+    top: 50%;            /* Centrer verticalement */
+    left: 50%;           /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Centrer exactement en ajustant la taille du bouton */
+    padding: 1em 2em;    /* Agrandir la taille du bouton */
+    background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+    color: black;        /* Couleur du texte */
+    border: none;        /* Supprimer la bordure */
+    border-radius: 10px; /* Bordure arrondie */
+    font-size: 1.2em;    /* Augmenter la taille du texte */
+    cursor: pointer;    /* Afficher un curseur pointer pour l'interaction */
+    opacity: 0;          /* Bouton caché par défaut */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition pour l'apparition et l'agrandissement */
+}
+
+.work-item:hover .image-button {
+    opacity: 1;          /* Rendre le bouton visible lors du survol */
+    transform: translate(-50%, -50%) scale(1.2); /* Agrandir légèrement le bouton au survol */
+}
+
+/* Assurer que les images sont bien dimensionnées */
+.image.fit {
+    position: relative; /* Assurer que l'image occupe l'espace de l'élément parent */
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .work-item {
+        max-width: 100%; /* Permet aux articles de s'adapter à la largeur de l'écran */
+    }
+}
+
+/* Positionner le lien image pour être un conteneur relatif */
+.image {
+    position: relative;  /* Nécessaire pour positionner les éléments à l'intérieur */
+    display: inline-block;
+    width: 100%;  /* Assurer que l'image prend la largeur complète de son conteneur */
+    height: auto; /* Hauteur de l'image ajustée automatiquement */
+  }
+  
+  /* Positionner le bouton au centre de l'image */
+  .image-button {
+    display: none;  /* Le bouton est masqué par défaut */
+    position: absolute;
+    top: 50%;  /* Positionner verticalement au centre */
+    left: 50%; /* Positionner horizontalement au centre */
+    transform: translate(-50%, -50%); /* Déplacer le bouton de moitié de sa propre largeur et hauteur pour le centrer parfaitement */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;  /* Le texte est transparent par défaut */
+    transition: opacity 0.3s ease; /* Animation de fondu pour l'apparition */
+  }
+  
+  /* Afficher le texte au survol de l'image sur les grands écrans */
+  .image:hover .image-button {
+    display: block;  /* Afficher le bouton */
+    opacity: 1;      /* Rendre le texte visible */
+  }
+  
+  /* Afficher le texte sur les écrans de téléphone (moins de 600px) */
+  @media screen and (max-width: 600px) {
+    .image-button {
+      display: block;  /* Afficher le bouton sur les petits écrans */
+      opacity: 1;      /* Assurer que le texte est visible */
+    }
+  }
+
+
+  
+  
